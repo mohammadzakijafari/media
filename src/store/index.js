@@ -11,3 +11,5 @@ export { usersReducer };
 
 // this statement explains whatever is exported from the path will be exported from this file as well for the purpose of central export
 export * from './thunks/fetchUsers';
+export * from './thunks/addUser';
+export * from './thunks/removeUser';
