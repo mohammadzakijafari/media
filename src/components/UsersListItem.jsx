@@ -3,6 +3,8 @@ import Button from './Button'
 import { useThunk } from '../hooks/use-thunk'
 import { removeUser } from '../store';
 import { TiDelete } from "react-icons/ti";
+import ExpandablePanel from './ExpandablePanel';
+import AlbumsList from './AlbumsList';
 
 const UsersListItem = ({ user }) => {
     // accessing state function and thunk function
@@ -13,18 +15,17 @@ const UsersListItem = ({ user }) => {
         doRemoveUser(user);
     }
 
+    const header = <>
+        <Button loading={isLoading} onClick = { handleDeleteClick }>
+            <TiDelete />
+        </Button>
+        {error && <div className=''> Error Deleting User </div>}
+        { user.name }
+    </>
   return (
-    <div className='mb-2 border rounded'>
-        <div className='flex items center justify-between p-2 cursor-pointer text-xl'> 
-            <div className='flex items-center justify-between gap-4'>
-                <Button loading={isLoading} onClick = { handleDeleteClick }>
-                    <TiDelete />
-                </Button>
-                {error && <div className=''> Error Deleting User </div>}
-                { user.name }     
-            </div> 
-        </div>
-    </div>
+    <ExpandablePanel header = { header }>
+        <AlbumsList user = {user} />
+    </ExpandablePanel>
   )
 }
 

@@ -17,6 +17,27 @@
       "name": "Ms. Darrel Kshlerin DDS"
     }
   ],
-  "albums": [],
+  "albums": [
+    {
+      "id": "10",
+      "title": "Hiking Trip",
+      "userId": 1
+    },
+    {
+      "id": "9600",
+      "userId": "1",
+      "title": "Electronic Plastic Shirt"
+    },
+    {
+      "id": "4520",
+      "userId": "1",
+      "title": "Gorgeous Bronze Chair"
+    },
+    {
+      "id": "618e",
+      "userId": "1",
+      "title": "Elegant Concrete Shoes"
+    }
+  ],
   "photos": []
 }
