@@ -1,14 +1,13 @@
 import React from 'react'
 import { useAddAlbumMutation, useFetchAlbumsQuery } from '../store/apis/albumsApi';
 import Skeleton from './Skeleton';
-import ExpandablePanel from './ExpandablePanel';
 import Button from './Button';
 import AlbumListItem from './AlbumListItem';
 
 const AlbumsList = ({ user }) => {
 
     // accessing data from our toolkit query
-    const {data, error, isLoading } = useFetchAlbumsQuery(user);
+    const {data, error, isFetching } = useFetchAlbumsQuery(user);
     
     // adding data to toolkit query
     const [addAlbum, result] = useAddAlbumMutation();
@@ -20,7 +19,7 @@ const AlbumsList = ({ user }) => {
 
     // content to show to user
     let content;
-    if (isLoading) {
+    if (isFetching) {
         content = <Skeleton className = "h-10 w-full" times = {3} />
     } else if (error) {
         content = <div className=''> Error Loading Albums... </div>
