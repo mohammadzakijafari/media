@@ -3,6 +3,7 @@ import ExpandablePanel from './ExpandablePanel'
 import { MdDeleteOutline } from "react-icons/md";
 import Button from './Button';
 import { useRemoveAlbumMutation } from '../store/apis/albumsApi';
+import PhotosList from './PhotosList';
 
 
 const AlbumListItem = ({ album }) => {
@@ -18,7 +19,7 @@ const AlbumListItem = ({ album }) => {
             { album.title } 
         </>
     return <ExpandablePanel header = {header} >
-        List of photos in the album
+        <PhotosList album = {album} />
     </ExpandablePanel>
 }
 
